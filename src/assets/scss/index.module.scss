@@ -1,0 +1,127 @@
+@import "global";
+header {
+  height: px2rem(40);
+}
+.app-search {
+  @extend .vertical-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  height: px2rem(40);
+  border-bottom: px2rem(1) solid #ddd;
+  box-sizing: border-box;
+  padding: px2rem(5) px2rem(10);
+  width: 100%;
+  background-color: #f5f5f9;
+  > input {
+    border-radius: px2rem(5);
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+    padding: px2rem(5) 0;
+    border: none;
+    background: url(~assets/images/icon-search.png) no-repeat center #dedede;
+    background-color: #dedede;
+    background-size: px2rem(15) px2rem(15);
+    background-position: calc(50% - 0.25rem);
+  }
+}
+.app-recommendation {
+  border-bottom: px2rem(1) solid #ddd;
+  padding: 0 0 px2rem(18) px2rem(10);
+  h1 {
+    font-size: px2rem(24);
+    margin: px2rem(16) 0;
+  }
+  .recommendation-list {
+    overflow: auto;
+
+    ul {
+      width: px2rem(900);
+      padding-right: px2rem(15);
+    }
+    .list-item {
+      width: px2rem(75);
+      float: left;
+      margin-right: px2rem(15);
+      &:last-child {
+        margin-right: 0;
+        padding-right: px2rem(15);
+      }
+      img {
+        vertical-align: top;
+        display: block;
+        border-radius: px2rem(15);
+      }
+      h3 {
+        color: #666;
+        font-size: px2rem(12);
+        line-height: px2rem(18);
+        margin: px2rem(8) 0 0 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &.name {
+          color: #333;
+          font-size: px2rem(14);
+        }
+      }
+    }
+  }
+}
+
+.app-list {
+  font-size: 0;
+  padding: 0 0 0 px2rem(10);
+  .list-item {
+    border-bottom: px2rem(1) solid #ddd;
+    display: flex;
+    align-items: center;
+    line-height: px2rem(70);
+    &:last-child {
+      border-bottom: none;
+    }
+    &.double {
+      img {
+        margin: 0rem 0.1rem 0 0.05rem;
+      }
+    }
+    &:nth-child(even) {
+      img {
+        border-radius: 50%;
+      }
+    }
+    .sort-num {
+      font-size: px2rem(18);
+      color: #666;
+    }
+    img {
+      border-radius: px2rem(15);
+      float: left;
+      width: px2rem(50);
+      margin: px2rem(0) px2rem(10) 0 px2rem(15);
+    }
+
+    h2 {
+      line-height: 1;
+      font-size: px2rem(15);
+    }
+    h3 {
+      line-height: 1;
+      font-size: px2rem(13);
+      color: #666;
+      margin: px2rem(5) 0;
+    }
+    .star-line {
+      line-height: 1;
+      font-size: 0;
+      .amount {
+        font-size: px2rem(12);
+        color: #666;
+      }
+    }
+  }
+}
