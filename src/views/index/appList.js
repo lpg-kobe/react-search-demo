@@ -1,29 +1,17 @@
 import { connect } from 'react-redux';
 import style from '@/assets/scss/index.module.scss';
-import {setAppList} from '@store/'
+import React from 'react';
+// scroll
+import ScrollBottom from '@/components/common/scrollBottom.js';
+// component
+import Star from '@/components/index/star.js';
+
 /**
  * @desc app list
  * @author pika
  */
 class AppList extends React.Component {
-  onReachBottom() {
-    let stateData = store.getState();
-    if (
-      stateData.appListReduce.pageIndex === stateData.appListReduce.totalPage ||
-      stateData.appListReduce.loadingShow
-    ) {
-      return;
-    }
-    store.dispatch(
-      setAppList({
-        keyword: stateData.searchBarReduce.keyword,
-        pageSize: stateData.appListReduce.pageSize,
-        pageIndex: stateData.appListReduce.pageIndex + 1,
-        loadingShow: true,
-        isAdd: true
-      })
-    );
-  }
+  onReachBottom() {}
   render() {
     let list = this.props.list,
       listDom = list.map((item, index) => {

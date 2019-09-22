@@ -3,6 +3,7 @@
  * @author pika
  */
 import { connect } from 'react-redux';
+import React from 'react';
 import style from '@/assets/scss/index.module.scss';
 import { search } from '@/store/actions';
 class SearchBar extends React.Component {

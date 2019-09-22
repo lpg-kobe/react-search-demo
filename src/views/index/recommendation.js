@@ -3,10 +3,11 @@
  * @author pika
  */
 import { connect } from 'react-redux';
+import React from 'react';
 import style from '@/assets/scss/index.module.scss';
 class RecommendationList extends React.Component {
   render() {
-    let list = this.props.list,
+    let list = this.props.recommendation.list,
       listDom = list.map(item => {
         let itemImg = item['im:image'][item['im:image'].length - 1].label,
           itemCate = item['category']['attributes']['label'],
@@ -30,4 +31,4 @@ class RecommendationList extends React.Component {
     );
   }
 }
-export default connect()(RecommendationList);
+export default connect((state)=>{console.log(state)})(RecommendationList);
