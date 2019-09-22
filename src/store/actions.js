@@ -7,17 +7,16 @@
 import xhr from '@/api/index/index.js';
 
 /**
- * @desc change search keyword
+ * @desc search data
+ * @param {keyword} search keyword
  * @author pika
  */
-export function setSearchBar(data) {
-  return (dispatch, getState) => {
-    dispatch({
-      type: 'SET_SEARCHBAR',
-      data: data
-    });
-  };
-}
+export const search = value => ({
+  type: 'SEARCH',
+  payload: {
+    value
+  }
+});
 
 /**
  * @desc commit action setRecommendationList to reducer
